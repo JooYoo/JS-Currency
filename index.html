@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Currency</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div>Hello world. I'm currency</div>
+
+<body onload="convertCurrency();">
+    <div id="box">
+        <table>
+            <tr>
+                <td>
+                    <input id="fromAmount" type="text" size="15" value="1">
+                </td>
+                <td>
+                    <select id="from" onchange="convertCurrency();">
+                        <option value="EUR" selected>European Euro (EUR)</option>
+                        <option value="CNY">Chinese Yuan (CNY)</option>
+                        <option value="JPY">Japanese Yen (JPY)</option>
+                        <option value="USD">US Dollar (USD)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="toAmount" type="text" size="15" disabled>
+                </td>
+                <td>
+                    <select id="to" onchange="convertCurrency();">
+                        <option value="EUR">European Euro (EUR)</option>
+                        <option value="CNY" selected>Chinese Yuan (CNY)</option>
+                        <option value="JPY">Japanese Yen (JPY)</option>
+                        <option value="USD">US Dollar (USD)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="js/currency.js"></script>
 </body>
+
 </html>
