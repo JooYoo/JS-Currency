@@ -1,12 +1,25 @@
-#box{
+/* #box{
     width: 300px;
     height: 150px;
     margin: 0px auto;
     border: 1px solid black;
     padding: 5px;
+} */
+
+.card{
+    margin-top: 400px;
 }
 
-table{
+.vertical-center {
+    min-height: 100%;
+    /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh;
+    /* These two lines are counted as one :-) */
+    display: flex;
+    align-items: center;
+}
+
+table {
     margin: 0px auto;
     margin-top: 40px;
 }

@@ -7,40 +7,72 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Currency</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body onload="convertCurrency();">
-    <div id="box">
-        <table>
-            <tr>
-                <td>
-                    <input id="fromAmount" type="text" size="15" value="1" onkeyup="convertCurrency()">
-                </td>
-                <td>
-                    <select id="from" onchange="convertCurrency();">
-                        <option value="EUR" selected>European Euro (EUR)</option>
-                        <option value="CNY">Chinese Yuan (CNY)</option>
-                        <option value="JPY">Japanese Yen (JPY)</option>
-                        <option value="USD">US Dollar (USD)</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input id="toAmount" type="text" size="15" disabled>
-                </td>
-                <td>
-                    <select id="to" onchange="convertCurrency();">
-                        <option value="EUR">European Euro (EUR)</option>
-                        <option value="CNY" selected>Chinese Yuan (CNY)</option>
-                        <option value="JPY">Japanese Yen (JPY)</option>
-                        <option value="USD">US Dollar (USD)</option>
-                    </select>
-                </td>
-            </tr>
-        </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <!-- left -->
+            </div>
+            <div class="col-6">
+                <div class="card text-center shadow-lg">
+                    <div class="card-header">
+                        Header
+                    </div>
+                    <div class="card-body align-content-center"   >
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">Content</p>
+                        <div id="box" >
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input id="fromAmount" type="text" size="15" value="1" onkeyup="convertCurrency()">
+                                    </td>
+                                    <td>
+                                        <select id="from" onchange="convertCurrency();">
+                                            <option value="EUR" selected>European Euro (EUR)</option>
+                                            <option value="CNY">Chinese Yuan (CNY)</option>
+                                            <option value="JPY">Japanese Yen (JPY)</option>
+                                            <option value="USD">US Dollar (USD)</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input id="toAmount" type="text" size="15" disabled>
+                                    </td>
+                                    <td>
+                                        <select id="to" onchange="convertCurrency();">
+                                            <option value="EUR">European Euro (EUR)</option>
+                                            <option value="CNY" selected>Chinese Yuan (CNY)</option>
+                                            <option value="JPY">Japanese Yen (JPY)</option>
+                                            <option value="USD">US Dollar (USD)</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        footer
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-3">
+                <!-- right -->
+            </div>
+        </div>
     </div>
 
+
+
+
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/currency.js"></script>
 </body>
 
