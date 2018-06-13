@@ -10,20 +10,20 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
-<body onload="convertCurrency();">
+<body onload="convertCurrency(); displayChart();">
     <div class="container">
         <div class="row">
-            <div class="col-3">
+            <div class="col-2">
                 <!-- left -->
             </div>
-            <div class="col-6">
+            <div class="col-8">
                 <div class="card text-center shadow-lg">
                     <div class="card-header">
-                        Header
+                        <canvas id="myChart"></canvas>
                     </div>
                     <div class="card-body align-content-center"   >
                         <h5 class="card-title">Title</h5>
-                        <p class="card-text">Content</p>
+                        <p class="card-text"></p>
                         <div id="box" >
                             <table>
                                 <tr>
@@ -61,7 +61,7 @@
                 </div>
 
             </div>
-            <div class="col-3">
+            <div class="col-2">
                 <!-- right -->
             </div>
         </div>
@@ -70,7 +70,7 @@
 
 
 
-
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/currency.js"></script>
