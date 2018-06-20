@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
-<body onload="convertCurrency(); displayChart(); Bind();">
+<body onload="Bind();">
     <div class="container">
         <div class="row">
             <div class="col-2">
@@ -31,7 +31,7 @@
                                         <input id="fromAmount" type="text" size="15" value="1" onkeyup="convertCurrency()">
                                     </td>
                                     <td>
-                                        <select id="from" onchange="convertCurrency();">
+                                        <select id="from" onchange="Bind();">
                                             <option value="EUR" selected>European Euro (EUR)</option>
                                             <option value="CNY">Chinese Yuan (CNY)</option>
                                             <option value="JPY">Japanese Yen (JPY)</option>

@@ -30,20 +30,30 @@ function getPastMonth(count) {
     return z.toISOString().substring(0, 10);
 }
 
-var currencies = [];
-function Bind() {
-
-    // todo: 获取过去五个月的今天的日期
+function getPastMonths(count){
     var dates = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < count; i++) {
         dates.push(getPastMonth(i));
     }
+
+    return dates;
+}
+
+var currencies = [];
+function Bind() {
+    // clear currencies
+    currencies=[];
+    //bind
+    convertCurrency();
+    // todo: 获取过去五个月的今天的日期
+    var dates= getPastMonths(5);
     console.log("dates: " + dates);
 
     // loop get different Month Currency
     for (let z = 0; z < dates.length; z++) {
         getHistoricalCurrency(dates[z]);
     }
+   
 }
 
 function getHistoricalCurrency(historyTime) {
@@ -73,29 +83,29 @@ function getHistoricalCurrency(historyTime) {
             currencies.push(result);
             console.log(historyTime + ": " + result);
             console.log("currencies:" + currencies);
+            displayChart();
         }
     }
+
+    
 }
 
 function displayChart() {
     var ctx = document.getElementById('myChart').getContext('2d');
+     // getPastMonths for X Axis
+     var dates= getPastMonths(5);
+     // draw chart
     var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'line',
-
         // The data for our dataset
         data: {
-            labels: ["0", "1", "2", "3", "4"],
+            labels: [dates[0], dates[1], dates[2], dates[3], dates[4]],
             datasets: [{
                 label: "1st Money",
                 backgroundColor: 'rgb(236, 64, 122)',
                 borderColor: 'rgb(236, 64, 122)',
-                data: [0, 2, 3, 5, 40],
-            }, {
-                label: "2nd Money",
-                backgroundColor: 'rgb(52, 152, 219)',
-                borderColor: 'rgb(52, 152, 219)',
-                data: [0, 10, 5, 2, 20],
+                data: [currencies[0], currencies[1], currencies[2], currencies[3], currencies[4]],
             }]
         },
 
