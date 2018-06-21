@@ -19,12 +19,10 @@
             <div class="col-8">
                 <div class="card text-center shadow-lg">
                     <div class="card-header">
-                        <canvas id="myChart"></canvas>
+                       <div class="card-title">C u r r e n c y</div>
                     </div>
-                    <div class="card-body align-content-center"   >
-                        <h5 class="card-title">Title</h5>
-                        <p class="card-text"></p>
-                        <div id="box" >
+                    <div class="card-header bg-white">
+                        <div id="box">
                             <table>
                                 <tr>
                                     <td>
@@ -55,11 +53,34 @@
                             </table>
                         </div>
                     </div>
-                    <div class="card-footer text-muted">
-                        footer
+                    <div class="card-body align-content-center">
+                        <canvas id="myChart" width="50" height="25"></canvas>
+                    </div>
+                    <div class="card-footer text-muted bg-white">
+                        <div></div>
+                        <button id="btnNum7" class="btn btn-white btn-lg" onclick="btnNum7Press()">7</button>
+                        <button id="btnNum8" class="btn btn-white btn-lg" onclick="btnNum8Press()">8</button>
+                        <button id="btnNum9" class="btn btn-white btn-lg" onclick="btnNum9Press()">9</button>
+                        <button id="btnPlus" class="btn btn-white btn-lg" onclick="btnPlus()">+</button>
+                        <div></div>
+                        <button id="btnNum4" class="btn btn-White btn-lg" onclick="btnNum4Press()">4</button>
+                        <button id="btnNum5" class="btn btn-White btn-lg" onclick="btnNum5Press()">5</button>
+                        <button id="btnNum6" class="btn btn-White btn-lg" onclick="btnNum6Press()">6</button>
+                        <button id="btnMinus" class="btn btn-white btn-lg" onclick="btnMinus()">-</button>
+                        <div></div>
+                        <button id="btnNum1" class="btn btn-white btn-lg" onclick="btnNum1Press()">1</button>
+                        <button id="btnNum2" class="btn btn-white btn-lg" onclick="btnNum2Press()">2</button>
+                        <button id="btnNum3" class="btn btn-white btn-lg" onclick="btnNum3Press()">3</button>
+                        <button id="btnTimes" class="btn btn-white btn-lg" onclick="btnTimes()">x</button>
+                        <div></div>
+                        <button id="btnNum0" class="btn btn-white btn-lg" onclick="btnNum0Press()">0</button>
+                        <button id="btnDot" class="btn btn-white btn-lg" onclick="btnDot()">.</button>
+                        <button id="btnReset" class="btn btn-white btn-lg" onclick="btnReset()">c</button>
+                        <button id="btnDivide" class="btn btn-white btn-lg" onclick="btnDivide()">/</button>
+                        <!-- <button id="btnEqualTo" class = "btn btn-dark btn-lg" onclick="btnEqualTo()">=</button> -->
+                        <div></div>
                     </div>
                 </div>
-
             </div>
             <div class="col-2">
                 <!-- right -->

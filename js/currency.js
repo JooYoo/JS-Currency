@@ -32,7 +32,7 @@ function getPastMonth(count) {
 
 function getPastMonths(count){
     var dates = [];
-    for (let i = 0; i < count; i++) {
+    for (var i = count; i > 0; i--) {
         dates.push(getPastMonth(i));
     }
 
@@ -53,7 +53,6 @@ function Bind() {
     for (let z = 0; z < dates.length; z++) {
         getHistoricalCurrency(dates[z]);
     }
-   
 }
 
 function getHistoricalCurrency(historyTime) {
@@ -108,8 +107,7 @@ function displayChart() {
                 data: [currencies[0], currencies[1], currencies[2], currencies[3], currencies[4]],
             }]
         },
-
         // Configuration options go here
-        options: {}
+        options: { }
     });
 }
