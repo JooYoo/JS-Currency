@@ -30,7 +30,7 @@ function getPastMonth(count) {
     return z.toISOString().substring(0, 10);
 }
 
-function getPastMonths(count){
+function getPastMonths(count) {
     var dates = [];
     for (var i = count; i > 0; i--) {
         dates.push(getPastMonth(i));
@@ -40,13 +40,14 @@ function getPastMonths(count){
 }
 
 var currencies = [];
+
 function Bind() {
     // clear currencies
-    currencies=[];
+    currencies = [];
     //bind
     convertCurrency();
     // todo: 获取过去五个月的今天的日期
-    var dates= getPastMonths(5);
+    var dates = getPastMonths(5);
     console.log("dates: " + dates);
 
     // loop get different Month Currency
@@ -78,7 +79,7 @@ function getHistoricalCurrency(historyTime) {
             // calculate
             var oneUnit = jsResult.rates[to] / jsResult.rates[from];
             var result = (oneUnit * 1).toFixed(5);
-            
+
             currencies.push(result);
             console.log(historyTime + ": " + result);
             console.log("currencies:" + currencies);
@@ -86,14 +87,14 @@ function getHistoricalCurrency(historyTime) {
         }
     }
 
-    
+
 }
 
 function displayChart() {
     var ctx = document.getElementById('myChart').getContext('2d');
-     // getPastMonths for X Axis
-     var dates= getPastMonths(5);
-     // draw chart
+    // getPastMonths for X Axis
+    var dates = getPastMonths(5);
+    // draw chart
     var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'line',
@@ -108,6 +109,16 @@ function displayChart() {
             }]
         },
         // Configuration options go here
-        options: { }
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }]
+            }
+        }
     });
 }

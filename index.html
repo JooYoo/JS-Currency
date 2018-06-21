@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js"></script>
     <title>Currency</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -29,17 +30,28 @@
                                         <input id="fromAmount" type="text" size="15" value="1" onkeyup="convertCurrency()">
                                     </td>
                                     <td>
-                                        <select id="from" onchange="Bind();">
-                                            <option value="EUR" selected>European Euro (EUR)</option>
-                                            <option value="CNY">Chinese Yuan (CNY)</option>
-                                            <option value="JPY">Japanese Yen (JPY)</option>
-                                            <option value="USD">US Dollar (USD)</option>
-                                        </select>
+                                            <input id="toAmount" type="text" size="15" disabled>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input id="toAmount" type="text" size="15" disabled>
+                                            <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      Dropdown button
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                      <a class="dropdown-item" href="#">Action</a>
+                                                      <a class="dropdown-item" href="#">Another action</a>
+                                                      <a class="dropdown-item" href="#">Something else here</a>
+                                                    </div>
+                                                  </div>
+                                            <select id="from" onchange="Bind();">
+                                                    <option value="EUR" selected>European Euro (EUR)</option>
+                                                    <option value="CNY">Chinese Yuan (CNY)</option>
+                                                    <option value="JPY">Japanese Yen (JPY)</option>
+                                                    <option value="USD">US Dollar (USD)</option>
+                                                </select>
                                     </td>
                                     <td>
                                         <select id="to" onchange="convertCurrency();">
@@ -53,8 +65,8 @@
                             </table>
                         </div>
                     </div>
-                    <div class="card-body align-content-center">
-                        <canvas id="myChart" width="50" height="25"></canvas>
+                    <div id="canvas-container" class="card-body align-content-center">
+                        <canvas id="myChart"></canvas>
                     </div>
                     <div class="card-footer text-muted bg-white">
                         <div></div>
@@ -87,10 +99,7 @@
             </div>
         </div>
     </div>
-
-
-
-
+    
     <script src="node_modules/chart.js/dist/Chart.min.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

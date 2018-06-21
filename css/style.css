@@ -7,8 +7,12 @@
 } */
 
 .card{
-    margin-top: 100px;
-    width: auto;
+    margin-top: 50px;
+   height: 600px !important;
+}
+
+.card-body{
+    align-content: center;
 }
 
 .vertical-center {
@@ -22,12 +26,29 @@
 
 table {
     margin: 0px auto;
-    margin-top: 40px;
 }
 
 .btn-lg {
     width: 80px;
-    height: 80px;
-    margin: 10px;
-    font-size: 40px;
+    height: 40px;
+    font-size: 0.4;
+    padding: 2px !important;
+    margin:1px;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 0 !important;
+    
+}
+
+.card-footer{
+    padding:0 !important;
+}
+
+#canvas-container{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+canvas{
+   display: inline;
 }
