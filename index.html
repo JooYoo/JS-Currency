@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js"></script>
+
     <title>Currency</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -14,47 +14,39 @@
 <body onload="Bind();">
     <div class="container">
         <div class="row">
-            <div class="col-2">
+            <div class="col-2 col-lg-3">
                 <!-- left -->
             </div>
-            <div class="col-8">
+            <div class="col-8 col-lg-6">
                 <div class="card text-center shadow-lg">
                     <div class="card-header">
-                       <div class="card-title">C u r r e n c y</div>
+                        <div class="card-title">C u r r e n c y</div>
                     </div>
                     <div class="card-header bg-white">
-                        <div id="box">
-                            <table>
+                        <div id="box" style="text-align: center">
+                            <table id="myTable">
                                 <tr>
                                     <td>
-                                        <input id="fromAmount" type="text" size="15" value="1" onkeyup="convertCurrency()">
+                                        <input id="fromAmount" class="form-control" type="text" size="15" value="1" onkeyup="convertCurrency()">
                                     </td>
                                     <td>
-                                            <input id="toAmount" type="text" size="15" disabled>
-                                        
+                                        <input id="toAmount" class="form-control" type="text" size="15" disabled>
+
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                            <div class="dropdown">
-                                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                      Dropdown button
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                      <a class="dropdown-item" href="#">Action</a>
-                                                      <a class="dropdown-item" href="#">Another action</a>
-                                                      <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                  </div>
-                                            <select id="from" onchange="Bind();">
-                                                    <option value="EUR" selected>European Euro (EUR)</option>
-                                                    <option value="CNY">Chinese Yuan (CNY)</option>
-                                                    <option value="JPY">Japanese Yen (JPY)</option>
-                                                    <option value="USD">US Dollar (USD)</option>
-                                                </select>
+                                        <select id="from" class="myDropdown bg-secondary text-white" onchange="Bind();">
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <option class="dropdown-item" value="EUR" selected>European Euro (EUR)</option>
+                                                <option class="dropdown-item" value="CNY">Chinese Yuan (CNY)</option>
+                                                <option class="dropdown-item" value="JPY">Japanese Yen (JPY)</option>
+                                                <option class="dropdown-item" value="USD">US Dollar (USD)</option>
+                                            </div>
+                                        </select>
                                     </td>
                                     <td>
-                                        <select id="to" onchange="convertCurrency();">
+                                        <select id="to" class="myDropdown bg-secondary text-white" onchange="convertCurrency();">
                                             <option value="EUR">European Euro (EUR)</option>
                                             <option value="CNY" selected>Chinese Yuan (CNY)</option>
                                             <option value="JPY">Japanese Yen (JPY)</option>
@@ -94,13 +86,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-2 col-lg-3">
                 <!-- right -->
             </div>
         </div>
     </div>
-    
+
     <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/currency.js"></script>
