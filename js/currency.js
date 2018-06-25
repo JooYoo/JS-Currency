@@ -102,9 +102,9 @@ function displayChart() {
         data: {
             labels: [dates[0], dates[1], dates[2], dates[3], dates[4]],
             datasets: [{
-                label: "1st Money",
-                backgroundColor: 'rgb(236, 64, 122)',
-                borderColor: 'rgb(236, 64, 122)',
+                label: "Currency",
+                backgroundColor: 'rgb(171, 221, 147,0.3)',
+                borderColor: 'rgb(48, 110, 18,0.3)',
                 data: [currencies[0], currencies[1], currencies[2], currencies[3], currencies[4]],
             }]
         },

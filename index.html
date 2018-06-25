@@ -12,85 +12,77 @@
 </head>
 
 <body onload="Bind();">
-    <div class="container">
-        <div class="row">
-            <div class="col-2 col-lg-3">
-                <!-- left -->
-            </div>
-            <div class="col-8 col-lg-6">
-                <div class="card text-center shadow-lg">
-                    <div class="card-header">
-                        <div class="card-title">C u r r e n c y</div>
-                    </div>
-                    <div class="card-header bg-white">
-                        <div id="box" style="text-align: center">
-                            <table id="myTable">
-                                <tr>
-                                    <td>
-                                        <input id="fromAmount" class="form-control" type="text" size="15" value="1" onkeyup="convertCurrency()">
-                                    </td>
-                                    <td>
-                                        <input id="toAmount" class="form-control" type="text" size="15" disabled>
 
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <select id="from" class="myDropdown bg-secondary text-white" onchange="Bind();">
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <option class="dropdown-item" value="EUR" selected>European Euro (EUR)</option>
-                                                <option class="dropdown-item" value="CNY">Chinese Yuan (CNY)</option>
-                                                <option class="dropdown-item" value="JPY">Japanese Yen (JPY)</option>
-                                                <option class="dropdown-item" value="USD">US Dollar (USD)</option>
-                                            </div>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <select id="to" class="myDropdown bg-secondary text-white" onchange="convertCurrency();">
-                                            <option value="EUR">European Euro (EUR)</option>
-                                            <option value="CNY" selected>Chinese Yuan (CNY)</option>
-                                            <option value="JPY">Japanese Yen (JPY)</option>
-                                            <option value="USD">US Dollar (USD)</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div id="canvas-container" class="card-body align-content-center">
-                        <canvas id="myChart"></canvas>
-                    </div>
-                    <div class="card-footer text-muted bg-white">
-                        <div></div>
-                        <button id="btnNum7" class="btn btn-white btn-lg" onclick="btnNum7Press()">7</button>
-                        <button id="btnNum8" class="btn btn-white btn-lg" onclick="btnNum8Press()">8</button>
-                        <button id="btnNum9" class="btn btn-white btn-lg" onclick="btnNum9Press()">9</button>
-                        <button id="btnPlus" class="btn btn-white btn-lg" onclick="btnPlus()">+</button>
-                        <div></div>
-                        <button id="btnNum4" class="btn btn-White btn-lg" onclick="btnNum4Press()">4</button>
-                        <button id="btnNum5" class="btn btn-White btn-lg" onclick="btnNum5Press()">5</button>
-                        <button id="btnNum6" class="btn btn-White btn-lg" onclick="btnNum6Press()">6</button>
-                        <button id="btnMinus" class="btn btn-white btn-lg" onclick="btnMinus()">-</button>
-                        <div></div>
-                        <button id="btnNum1" class="btn btn-white btn-lg" onclick="btnNum1Press()">1</button>
-                        <button id="btnNum2" class="btn btn-white btn-lg" onclick="btnNum2Press()">2</button>
-                        <button id="btnNum3" class="btn btn-white btn-lg" onclick="btnNum3Press()">3</button>
-                        <button id="btnTimes" class="btn btn-white btn-lg" onclick="btnTimes()">x</button>
-                        <div></div>
-                        <button id="btnNum0" class="btn btn-white btn-lg" onclick="btnNum0Press()">0</button>
-                        <button id="btnDot" class="btn btn-white btn-lg" onclick="btnDot()">.</button>
-                        <button id="btnReset" class="btn btn-white btn-lg" onclick="btnReset()">c</button>
-                        <button id="btnDivide" class="btn btn-white btn-lg" onclick="btnDivide()">/</button>
-                        <!-- <button id="btnEqualTo" class = "btn btn-dark btn-lg" onclick="btnEqualTo()">=</button> -->
-                        <div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2 col-lg-3">
-                <!-- right -->
+    <div id="container" class="card text-center shadow-lg">
+        <div class="card-header">
+            <div class="card-title">C u r r e n c y</div>
+        </div>
+        <div class="card-header bg-white">
+            <div id="box" style="text-align: center">
+                <table id="myTable">
+                    <tr>
+                        <td>
+                            <input id="fromAmount" class="form-control" type="text" value="1" onkeyup="convertCurrency()">
+                        </td>
+                        <td>
+                            <input id="toAmount" class="form-control" type="text" disabled>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="from" class="myDropdown bg-secondary text-white form-control" onchange="Bind();">
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <option class="dropdown-item" value="EUR" selected>European Euro (EUR)</option>
+                                    <option class="dropdown-item" value="CNY">Chinese Yuan (CNY)</option>
+                                    <option class="dropdown-item" value="JPY">Japanese Yen (JPY)</option>
+                                    <option class="dropdown-item" value="USD">US Dollar (USD)</option>
+                                </div>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="to" class="myDropdown bg-secondary text-white form-control" onchange="convertCurrency();">
+                                <option value="EUR">European Euro (EUR)</option>
+                                <option value="CNY" selected>Chinese Yuan (CNY)</option>
+                                <option value="JPY">Japanese Yen (JPY)</option>
+                                <option value="USD">US Dollar (USD)</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
+        <div id="canvas-container" class="card-body align-content-center">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="card-footer text-muted bg-white">
+            <div></div>
+            <button id="btnNum7" class="btn btn-white btn-lg" onclick="btnNum7Press()">7</button>
+            <button id="btnNum8" class="btn btn-white btn-lg" onclick="btnNum8Press()">8</button>
+            <button id="btnNum9" class="btn btn-white btn-lg" onclick="btnNum9Press()">9</button>
+            <button id="btnPlus" class="btn btn-white btn-lg" onclick="btnPlus()">+</button>
+            <div></div>
+            <button id="btnNum4" class="btn btn-White btn-lg" onclick="btnNum4Press()">4</button>
+            <button id="btnNum5" class="btn btn-White btn-lg" onclick="btnNum5Press()">5</button>
+            <button id="btnNum6" class="btn btn-White btn-lg" onclick="btnNum6Press()">6</button>
+            <button id="btnMinus" class="btn btn-white btn-lg" onclick="btnMinus()">-</button>
+            <div></div>
+            <button id="btnNum1" class="btn btn-white btn-lg" onclick="btnNum1Press()">1</button>
+            <button id="btnNum2" class="btn btn-white btn-lg" onclick="btnNum2Press()">2</button>
+            <button id="btnNum3" class="btn btn-white btn-lg" onclick="btnNum3Press()">3</button>
+            <button id="btnTimes" class="btn btn-white btn-lg" onclick="btnTimes()">x</button>
+            <div></div>
+            <button id="btnNum0" class="btn btn-white btn-lg" onclick="btnNum0Press()">0</button>
+            <button id="btnDot" class="btn btn-white btn-lg" onclick="btnDot()">.</button>
+            <button id="btnReset" class="btn btn-white btn-lg" onclick="btnReset()">c</button>
+            <button id="btnDivide" class="btn btn-white btn-lg" onclick="btnDivide()">/</button>
+            <!-- <button id="btnEqualTo" class = "btn btn-dark btn-lg" onclick="btnEqualTo()">=</button> -->
+            <div></div>
+        </div>
     </div>
+
+
+
 
     <script src="node_modules/chart.js/dist/Chart.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
