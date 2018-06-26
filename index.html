@@ -22,7 +22,7 @@
                 <table id="myTable">
                     <tr>
                         <td>
-                            <input id="fromAmount" class="form-control" type="text" value="1" onkeyup="convertCurrency()">
+                            <input id="fromAmount" class="form-control" type="text" value="1" disabled>
                         </td>
                         <td>
                             <input id="toAmount" class="form-control" type="text" disabled>
@@ -33,19 +33,19 @@
                         <td>
                             <select id="from" class="myDropdown bg-secondary text-white form-control" onchange="Bind();">
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <option class="dropdown-item" value="EUR" selected>European Euro (EUR)</option>
-                                    <option class="dropdown-item" value="CNY">Chinese Yuan (CNY)</option>
-                                    <option class="dropdown-item" value="JPY">Japanese Yen (JPY)</option>
-                                    <option class="dropdown-item" value="USD">US Dollar (USD)</option>
+                                    <option class="dropdown-item" value="EUR" selected>European Euro</option>
+                                    <option class="dropdown-item" value="CNY">Chinese Yuan</option>
+                                    <option class="dropdown-item" value="JPY">Japanese Yen</option>
+                                    <option class="dropdown-item" value="USD">US Dollar</option>
                                 </div>
                             </select>
                         </td>
                         <td>
                             <select id="to" class="myDropdown bg-secondary text-white form-control" onchange="convertCurrency();">
-                                <option value="EUR">European Euro (EUR)</option>
-                                <option value="CNY" selected>Chinese Yuan (CNY)</option>
-                                <option value="JPY">Japanese Yen (JPY)</option>
-                                <option value="USD">US Dollar (USD)</option>
+                                <option value="EUR">European Euro</option>
+                                <option value="CNY" selected>Chinese Yuan</option>
+                                <option value="JPY">Japanese Yen</option>
+                                <option value="USD">US Dollar</option>
                             </select>
                         </td>
                     </tr>
@@ -57,38 +57,36 @@
         </div>
         <div class="card-footer text-muted bg-white">
             <div></div>
-            <button id="btnNum7" class="btn btn-white btn-lg" onclick="btnNum7Press()">7</button>
-            <button id="btnNum8" class="btn btn-white btn-lg" onclick="btnNum8Press()">8</button>
-            <button id="btnNum9" class="btn btn-white btn-lg" onclick="btnNum9Press()">9</button>
+            <button id="btnNum7" class="btn btn-white btn-lg" onclick="btnNum7Press();convertCurrency()">7</button>
+            <button id="btnNum8" class="btn btn-white btn-lg" onclick="btnNum8Press();convertCurrency()">8</button>
+            <button id="btnNum9" class="btn btn-white btn-lg" onclick="btnNum9Press();convertCurrency()">9</button>
             <button id="btnPlus" class="btn btn-white btn-lg" onclick="btnPlus()">+</button>
             <div></div>
-            <button id="btnNum4" class="btn btn-White btn-lg" onclick="btnNum4Press()">4</button>
-            <button id="btnNum5" class="btn btn-White btn-lg" onclick="btnNum5Press()">5</button>
-            <button id="btnNum6" class="btn btn-White btn-lg" onclick="btnNum6Press()">6</button>
+            <button id="btnNum4" class="btn btn-White btn-lg" onclick="btnNum4Press();convertCurrency()">4</button>
+            <button id="btnNum5" class="btn btn-White btn-lg" onclick="btnNum5Press();convertCurrency()">5</button>
+            <button id="btnNum6" class="btn btn-White btn-lg" onclick="btnNum6Press();convertCurrency()">6</button>
             <button id="btnMinus" class="btn btn-white btn-lg" onclick="btnMinus()">-</button>
             <div></div>
-            <button id="btnNum1" class="btn btn-white btn-lg" onclick="btnNum1Press()">1</button>
-            <button id="btnNum2" class="btn btn-white btn-lg" onclick="btnNum2Press()">2</button>
-            <button id="btnNum3" class="btn btn-white btn-lg" onclick="btnNum3Press()">3</button>
+            <button id="btnNum1" class="btn btn-white btn-lg" onclick="btnNum1Press();convertCurrency()">1</button>
+            <button id="btnNum2" class="btn btn-white btn-lg" onclick="btnNum2Press();convertCurrency()">2</button>
+            <button id="btnNum3" class="btn btn-white btn-lg" onclick="btnNum3Press();convertCurrency()">3</button>
             <button id="btnTimes" class="btn btn-white btn-lg" onclick="btnTimes()">x</button>
             <div></div>
-            <button id="btnNum0" class="btn btn-white btn-lg" onclick="btnNum0Press()">0</button>
+            <button id="btnNum0" class="btn btn-white btn-lg" onclick="btnNum0Press();convertCurrency()">0</button>
             <button id="btnDot" class="btn btn-white btn-lg" onclick="btnDot()">.</button>
-            <button id="btnReset" class="btn btn-white btn-lg" onclick="btnReset()">c</button>
+            <button id="btnReset" class="btn btn-white btn-lg" onclick="btnReset();convertCurrency()">c</button>
             <button id="btnDivide" class="btn btn-white btn-lg" onclick="btnDivide()">/</button>
             <!-- <button id="btnEqualTo" class = "btn btn-dark btn-lg" onclick="btnEqualTo()">=</button> -->
             <div></div>
         </div>
     </div>
 
-
-
-
     <script src="node_modules/chart.js/dist/Chart.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/currency.js"></script>
+    <script src="js/calculator.js"></script>
 </body>
 
 </html>
