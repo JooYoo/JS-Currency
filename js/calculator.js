@@ -38,9 +38,7 @@ function btnEqualTo() {
        // switch
       // isResult = true;
     }
-   
 }
-
 
 function toDisplay(targetNum) {// a method to display Numbers
     // if result clear container
@@ -48,7 +46,6 @@ function toDisplay(targetNum) {// a method to display Numbers
         tempoNums = [];
         isResult = false;
     }
-
     
     // push 1 into array during each click
     tempoNums.push(targetNum);
@@ -58,7 +55,6 @@ function toDisplay(targetNum) {// a method to display Numbers
     //divResult.value= printInput;
     // display equition
     equation.value = printInput;
-    //divResult.innerHTML = printInput;
     // info
     console.log("[toDisplay()] tempoNums: " + tempoNums);
     console.log("[toDisplay()] printInput: " + printInput);
@@ -66,7 +62,6 @@ function toDisplay(targetNum) {// a method to display Numbers
    btnEqualTo();
     
 }
-
 
 function btnReset() {
     console.log('[btnRset()]');
@@ -77,6 +72,3 @@ function btnReset() {
     equation.value = 0;
     // divResult.innerHTML = 0;
 }
-
-
-
