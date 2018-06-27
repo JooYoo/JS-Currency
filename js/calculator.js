@@ -5,6 +5,7 @@ var result;
 var isResult = false;
 
 var divResult = document.getElementById("fromAmount");
+var equation = document.getElementById("fromAmount-equation");
 
 function btnNum1Press() { toDisplay(1); }
 function btnNum2Press() { toDisplay(2); }
@@ -54,7 +55,9 @@ function toDisplay(targetNum) {// a method to display Numbers
     // combine the numbers in an Array
     printInput = tempoNums.join('');
     // display it on DOM
-    divResult.value= printInput;
+    //divResult.value= printInput;
+    // display equition
+    equation.value = printInput;
     //divResult.innerHTML = printInput;
     // info
     console.log("[toDisplay()] tempoNums: " + tempoNums);
@@ -71,6 +74,7 @@ function btnReset() {
     tempoNums = [];
     // clean DOM up
     divResult.value = 1;
+    equation.value = 0;
     // divResult.innerHTML = 0;
 }
 

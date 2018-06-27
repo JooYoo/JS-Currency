@@ -17,36 +17,42 @@
         <div class="card-header">
             <div class="card-title">C u r r e n c y</div>
         </div>
-        <div class="card-header bg-white">
-            <div id="box" style="text-align: center">
+        <div id="fromToArea" class="card-header bg-white">
+            <div id="box">
                 <table id="myTable">
-                    <tr>
-                        <td>
-                            <input id="fromAmount" class="form-control" type="text" value="1" disabled>
-                        </td>
-                        <td>
-                            <input id="toAmount" class="form-control" type="text" disabled>
-
-                        </td>
-                    </tr>
                     <tr>
                         <td>
                             <select id="from" class="myDropdown bg-secondary text-white form-control" onchange="Bind();">
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <option class="dropdown-item" value="EUR" selected>European Euro</option>
-                                    <option class="dropdown-item" value="CNY">Chinese Yuan</option>
-                                    <option class="dropdown-item" value="JPY">Japanese Yen</option>
-                                    <option class="dropdown-item" value="USD">US Dollar</option>
+                                    <option class="dropdown-item text-white" value="EUR" selected>European Euro</option>
+                                    <option class="dropdown-item text-white" value="CNY">Chinese Yuan</option>
+                                    <option class="dropdown-item text-white" value="JPY">Japanese Yen</option>
+                                    <option class="dropdown-item text-white" value="USD">US Dollar</option>
                                 </div>
                             </select>
                         </td>
                         <td>
+                            <div>
+                                    <input id="fromAmount" class="form-control-up" type="text" value="1" disabled>
+                                    <input id="fromAmount-equation" class="form-control-up" type="text" value="0" disabled>
+                              
+                            </div>
+                                
+                                    
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>
                             <select id="to" class="myDropdown bg-secondary text-white form-control" onchange="convertCurrency();">
-                                <option value="EUR">European Euro</option>
-                                <option value="CNY" selected>Chinese Yuan</option>
-                                <option value="JPY">Japanese Yen</option>
-                                <option value="USD">US Dollar</option>
+                                <option class="dropdown-item text-white" value="EUR">European Euro</option>
+                                <option class="dropdown-item text-white" value="CNY" selected>Chinese Yuan</option>
+                                <option class="dropdown-item text-white" value="JPY">Japanese Yen</option>
+                                <option class="dropdown-item text-white" value="USD">US Dollar</option>
                             </select>
+                        </td>
+                        <td>
+                            <input id="toAmount" class="form-control" type="text" disabled>
                         </td>
                     </tr>
                 </table>
