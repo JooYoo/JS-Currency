@@ -4,9 +4,14 @@ function convertCurrency() {
 
     var xmlhttp = new XMLHttpRequest();
     var accessKey = "0d48bf0a46d9dd953c1b12395ef89565";
-    var url = "http://data.fixer.io/latest" +
-        "?access_key=" + accessKey +
-        "&symbols=" + from + "," + to;
+    if(from == "EUR"){
+        var url = "https://exchangeratesapi.io/api/latest" +
+        "?symbols=" + to;
+    }else{
+        var url = "https://exchangeratesapi.io/api/latest" +
+        "?symbols=" + from + "," + to;
+    }
+    
     xmlhttp.open('GET', url, true);
     xmlhttp.send();
 
@@ -17,7 +22,12 @@ function convertCurrency() {
             // parse to json data
             var jsResult = JSON.parse(result);
             // calculate
-            var oneUnit = jsResult.rates[to] / jsResult.rates[from];
+            var oneUnit;
+            if(from=="EUR"){
+                oneUnit = jsResult.rates[to];
+            }else{
+                oneUnit = jsResult.rates[to] / jsResult.rates[from];
+            }
             var amt = document.getElementById("fromAmount").value;
             document.getElementById("toAmount").value = (oneUnit * amt).toFixed(2);
         }
@@ -64,9 +74,15 @@ function getHistoricalCurrency(historyTime) {
     var xmlhttp = new XMLHttpRequest();
     var accessKey = "0d48bf0a46d9dd953c1b12395ef89565";
     // todo: 下面的日期要更换获取新数据
-    var url = "http://data.fixer.io/api/" + historyTime +
-        "?access_key=" + accessKey +
-        "&symbols=" + from + "," + to;
+    if(from=="EUR"){
+        var url = "https://exchangeratesapi.io/api/" + historyTime +
+        //"?access_key=" + accessKey +
+        "?symbols=" + to;
+    }else{
+        var url = "https://exchangeratesapi.io/api/" + historyTime +
+        //"?access_key=" + accessKey +
+        "?symbols=" + from + "," + to;
+    }
     xmlhttp.open('GET', url, true);
     xmlhttp.send();
     // 
@@ -77,7 +93,12 @@ function getHistoricalCurrency(historyTime) {
             // parse to json data
             var jsResult = JSON.parse(result);
             // calculate
-            var oneUnit = jsResult.rates[to] / jsResult.rates[from];
+            var oneUnit;
+            if(from=="EUR"){
+                oneUnit = jsResult.rates[to];
+            }else{
+                oneUnit = jsResult.rates[to] / jsResult.rates[from];
+            }
             var result = (oneUnit * 1).toFixed(5);
 
             currencies.push(result);
@@ -86,8 +107,6 @@ function getHistoricalCurrency(historyTime) {
             displayChart();
         }
     }
-
-
 }
 
 function displayChart() {
