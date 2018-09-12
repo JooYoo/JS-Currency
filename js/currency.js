@@ -63,17 +63,9 @@ function getHistoricalCurrency(historyTime) {
 
     // 准备数据
     var xmlhttp = new XMLHttpRequest();
-    var accessKey = "0d48bf0a46d9dd953c1b12395ef89565";
-    // todo: 下面的日期要更换获取新数据
-    if(from=="EUR"){
-        var url = "https://api.exchangeratesapi.io/" + historyTime +
-        //"?access_key=" + accessKey +
-        "?symbols=" + to;
-    }else{
-        var url = "https://api.exchangeratesapi.io/api/" + historyTime +
-        //"?access_key=" + accessKey +
-        "?symbols=" + from + "," + to;
-    }
+   
+    // get one unit history base Currency
+    var url = "https://api.exchangeratesapi.io/"+ historyTime +"?base=" + from;
     xmlhttp.open('GET', url, true);
     xmlhttp.send();
     // 
@@ -83,14 +75,10 @@ function getHistoricalCurrency(historyTime) {
             var result = xmlhttp.responseText;
             // parse to json data
             var jsResult = JSON.parse(result);
-            // calculate
-            var oneUnit;
-            if(from=="EUR"){
-                oneUnit = jsResult.rates[to];
-            }else{
-                oneUnit = jsResult.rates[to] / jsResult.rates[from];
-            }
-            var result = (oneUnit * 1).toFixed(5);
+           
+            var oneUnit = jsResult.rates[to];
+
+            var result = oneUnit.toFixed(5);
 
             currencies.push(result);
             console.log(historyTime + ": " + result);
