@@ -3,15 +3,10 @@ function convertCurrency() {
     var to = document.getElementById("to").value;
 
     var xmlhttp = new XMLHttpRequest();
-    //var accessKey = "0d48bf0a46d9dd953c1b12395ef89565";
-    if(from == "EUR"){
-        var url = "https://api.exchangeratesapi.io/latest" +
-        "?symbols=" + to;
-    }else{
-        var url = "https://api.exchangeratesapi.io/latest" +
-        "?symbols=" + from + "," + to;
-    }
-    
+
+    //get the base 
+    var url = "https://api.exchangeratesapi.io/latest?base=" + from;
+   
     xmlhttp.open('GET', url, true);
     xmlhttp.send();
 
@@ -22,12 +17,8 @@ function convertCurrency() {
             // parse to json data
             var jsResult = JSON.parse(result);
             // calculate
-            var oneUnit;
-            if(from=="EUR"){
-                oneUnit = jsResult.rates[to];
-            }else{
-                oneUnit = jsResult.rates[to] / jsResult.rates[from];
-            }
+            var oneUnit= jsResult.rates[to];
+            //result = oneUnit * amount
             var amt = document.getElementById("fromAmount").value;
             document.getElementById("toAmount").value = (oneUnit * amt).toFixed(2);
         }
@@ -56,7 +47,7 @@ function Bind() {
     currencies = [];
     //bind
     convertCurrency();
-    // todo: 获取过去五个月的今天的日期
+    // todo: get the past 5 months data
     var dates = getPastMonths(5);
     console.log("dates: " + dates);
 
