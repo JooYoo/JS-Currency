@@ -3,12 +3,12 @@ function convertCurrency() {
     var to = document.getElementById("to").value;
 
     var xmlhttp = new XMLHttpRequest();
-    var accessKey = "0d48bf0a46d9dd953c1b12395ef89565";
+    //var accessKey = "0d48bf0a46d9dd953c1b12395ef89565";
     if(from == "EUR"){
-        var url = "https://exchangeratesapi.io/api/latest" +
+        var url = "https://api.exchangeratesapi.io/latest" +
         "?symbols=" + to;
     }else{
-        var url = "https://exchangeratesapi.io/api/latest" +
+        var url = "https://api.exchangeratesapi.io/latest" +
         "?symbols=" + from + "," + to;
     }
     
@@ -75,11 +75,11 @@ function getHistoricalCurrency(historyTime) {
     var accessKey = "0d48bf0a46d9dd953c1b12395ef89565";
     // todo: 下面的日期要更换获取新数据
     if(from=="EUR"){
-        var url = "https://exchangeratesapi.io/api/" + historyTime +
+        var url = "https://api.exchangeratesapi.io/" + historyTime +
         //"?access_key=" + accessKey +
         "?symbols=" + to;
     }else{
-        var url = "https://exchangeratesapi.io/api/" + historyTime +
+        var url = "https://api.exchangeratesapi.io/api/" + historyTime +
         //"?access_key=" + accessKey +
         "?symbols=" + from + "," + to;
     }
