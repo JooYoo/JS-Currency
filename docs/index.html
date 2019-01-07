@@ -8,7 +8,8 @@
 
     <title>Currency</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
 </head>
 
 <body onload="Bind();">
@@ -22,7 +23,8 @@
                 <table id="myTable">
                     <tr>
                         <td>
-                            <select id="from" class="myDropdown bg-secondary text-white form-control" onchange="Bind();" style="width: auto;">
+                            <select id="from" class="myDropdown bg-secondary text-white form-control" onchange="Bind();"
+                                style="width: auto;">
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <option class="dropdown-item text-white" value="EUR" selected>EUR</option>
                                     <option class="dropdown-item text-white" value="CNY">CNY</option>
@@ -33,8 +35,9 @@
                         </td>
                         <td>
                             <div>
-                                  <input id="fromAmount" class="form-control-up" type="text" value="1" disabled>
-                                  <input id="fromAmount-equation" class="form-control-up text-muted" type="text" value="0" disabled>
+                                <input id="fromAmount" class="form-control-up" type="text" value="1" disabled>
+                                <input id="fromAmount-equation" class="form-control-up text-muted" type="text" value="0"
+                                    disabled>
                             </div>
                         </td>
                     </tr>
@@ -74,9 +77,9 @@
             <button id="btnNum3" class="btn btn-dark text-white btn-lg" onclick="btnNum3Press();convertCurrency()">3</button>
             <button id="btnTimes" class="btn btn-dark text-white btn-lg" onclick="btnTimes()">x</button>
             <div></div>
-            <button id="btnNum0"   class="btn btn-dark text-white btn-lg" onclick="btnNum0Press();convertCurrency()">0</button>
-            <button id="btnDot"    class="btn btn-dark text-white btn-lg" onclick="btnDot()">.</button>
-            <button id="btnReset"  class="btn btn-dark text-white btn-lg" onclick="btnReset();convertCurrency()">c</button>
+            <button id="btnNum0" class="btn btn-dark text-white btn-lg" onclick="btnNum0Press();convertCurrency()">0</button>
+            <button id="btnDot" class="btn btn-dark text-white btn-lg" onclick="btnDot()">.</button>
+            <button id="btnReset" class="btn btn-dark text-white btn-lg" onclick="btnReset();convertCurrency()">c</button>
             <button id="btnDivide" class="btn btn-dark text-white btn-lg" onclick="btnDivide()">/</button>
             <!-- <button id="btnEqualTo" class = "btn btn-dark btn-lg" onclick="btnEqualTo()">=</button> -->
             <div></div>
@@ -84,9 +87,12 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
     <script src="../js/currency.js"></script>
     <script src="../js/calculator.js"></script>
 </body>
